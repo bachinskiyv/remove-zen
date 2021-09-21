@@ -1,0 +1,20 @@
+{
+  "manifest_version": 2,
+  "name" : "RemoveYandexZen",
+  "version": "0.0.10",
+
+  "permissions" : [
+    "tabs", "activeTab"
+  ],
+
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  },
+
+  "content_scripts": [{
+    "matches": ["https://yandex.ru/*", "https://ya.ru/*"],
+    "js": ["content.js"],
+    "run_at": "document_start"
+  }]
+}
